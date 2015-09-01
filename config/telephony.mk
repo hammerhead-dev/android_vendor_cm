@@ -8,14 +8,7 @@ PRODUCT_COPY_FILES += \
 
 # Telephony packages
 PRODUCT_PACKAGES += \
-    Mms \
-    Stk \
-    CellBroadcastReceiver \
-    WhisperPush
-
-# Mms depends on SoundRecorder for recorded audio messages
-PRODUCT_PACKAGES += \
-    SoundRecorder
+    Mms
 
 # Default ringtone
 PRODUCT_PROPERTY_OVERRIDES += \
