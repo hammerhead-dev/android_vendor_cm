@@ -80,13 +80,7 @@ PRODUCT_COPY_FILES += \
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/cm/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/cm/prebuilt/common/bin/50-cm.sh:system/addon.d/50-cm.sh \
-    vendor/cm/prebuilt/common/bin/blacklist:system/addon.d/blacklist
-
-# Backup Services whitelist
-PRODUCT_COPY_FILES += \
-    vendor/cm/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
+    vendor/cm/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions
 
 # Signature compatibility validation
 PRODUCT_COPY_FILES += \
@@ -94,14 +88,7 @@ PRODUCT_COPY_FILES += \
 
 # init.d support
 PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
     vendor/cm/prebuilt/common/bin/sysinit:system/bin/sysinit
-
-ifneq ($(TARGET_BUILD_VARIANT),user)
-# userinit support
-PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
-endif
 
 # CM-specific init file
 PRODUCT_COPY_FILES += \
@@ -132,16 +119,12 @@ include vendor/cm/config/cmsdk_common.mk
 # Required CM packages
 PRODUCT_PACKAGES += \
     CMAudioService \
-    Development \
-    BluetoothExt \
-    Profiles \
     ThemeManagerService \
     WeatherManagerService
 
 # Optional CM packages
 PRODUCT_PACKAGES += \
-    libemoji \
-    Terminal
+    libemoji
 
 # Include librsjni explicitly to workaround GMS issue
 PRODUCT_PACKAGES += \
@@ -149,14 +132,9 @@ PRODUCT_PACKAGES += \
 
 # Custom CM packages
 PRODUCT_PACKAGES += \
-    Launcher3 \
     Trebuchet \
-    AudioFX \
-    CMWallpapers \
-    CMFileManager \
     Eleven \
     LockClock \
-    CMUpdater \
     CyanogenSetupWizard \
     CMSettingsProvider \
     ExactCalculator \
@@ -165,16 +143,11 @@ PRODUCT_PACKAGES += \
     DataUsageProvider \
     WallpaperPicker
 
-# Exchange support
-PRODUCT_PACKAGES += \
-    Exchange2
-
 # Extra tools in CM
 PRODUCT_PACKAGES += \
     libsepol \
     mke2fs \
     tune2fs \
-    nano \
     htop \
     mkfs.ntfs \
     fsck.ntfs \
@@ -204,10 +177,6 @@ PRODUCT_PACKAGES += \
     sshd_config \
     ssh-keygen \
     start-ssh
-
-# rsync
-PRODUCT_PACKAGES += \
-    rsync
 
 # Stagefright FFMPEG plugin
 PRODUCT_PACKAGES += \
