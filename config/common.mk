@@ -135,12 +135,10 @@ PRODUCT_PACKAGES += \
     Trebuchet \
     Eleven \
     LockClock \
-    CyanogenSetupWizard \
     CMSettingsProvider \
     ExactCalculator \
     LiveLockScreenService \
     WeatherProvider \
-    DataUsageProvider \
     WallpaperPicker
 
 # Extra tools in CM
